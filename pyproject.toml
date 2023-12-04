@@ -1,0 +1,14 @@
+[project]
+name = ""
+version = ""
+description = ""
+authors = [
+    {name = "Stephen Sweeney", email = "stephen.sweeney@jhuapl.edu"},
+]
+dependencies = [
+    "num2words>=0.5.13",
+]
+requires-python = ">=3.11"
+readme = "README.md"
+license = {text = "MIT"}
+

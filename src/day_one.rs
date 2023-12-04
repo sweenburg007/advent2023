@@ -68,12 +68,12 @@ pub fn get_part_2_config_value(line: &str) -> i32 {
             }
             second_digit = tmp_digit;
         }
-
-        println!(
-            "first_digit = {}, second_digit = {}",
-            first_digit, second_digit
-        );
     }
+
+    println!(
+        "first_digit = {}, second_digit = {}",
+        first_digit, second_digit
+    );
 
     let char0 = first_digit.to_string();
     let char1 = second_digit.to_string();
