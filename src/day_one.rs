@@ -1,6 +1,5 @@
 //! Functions for day 1 of Advent of Code 2023
 
-
 // constants for string based digits
 const NUM_STRS: [&'static str; 9] = [
     "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
