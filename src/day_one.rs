@@ -53,7 +53,9 @@ pub fn get_part_2_config_value(line: &str) -> i32 {
 
                     if buf_str == num_str.to_string() {
                         // println!("Found valid digit str!!!!, {}", NUM_CHARS[num_idx]);
+                        let cur_end_buff = buf.last().copied().unwrap();
                         buf.clear();
+                        buf.push(cur_end_buff);
                         tmp_digit = NUM_CHARS[num_idx];
                         break;
                     }
