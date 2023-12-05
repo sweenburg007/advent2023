@@ -55,7 +55,7 @@ for idx, line in enumerate(lines):
                     if cmp_str == digit_str:
                         # print("\tFOUND number string")
                         tmp_digit = NUM_CHARS[didx]
-                        buf = []
+                        buf = [buf[-1]]
                         break
 
         # updated test digits
