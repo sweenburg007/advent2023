@@ -26,10 +26,6 @@ fn main() {
                 idx, config_val, total
             );
         }
-
-        // println!("Wating to start again: ");
-        // let mut input = String::new();
-        // std::io::stdin().read_line(&mut input).expect("Huh?");
     }
     println!("Final Total = {}", total);
 }
