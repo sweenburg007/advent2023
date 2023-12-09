@@ -7,7 +7,8 @@ fn get_file(day: i32) -> String {
     let mut file_path = "";
     match day {
         1 => file_path = "data/input_1.txt",
-        2 => file_path = "data/test_2.txt",
+        2 => file_path = "data/input_2.txt",
+        3 => file_path = "data/test_3.txt",
         _ => println!("Invalid day"),
     }
 
@@ -81,15 +82,48 @@ fn main() {
 
             // const COLORS: [&'static str; 3] = ["red", "blue", "green"];
             let cmp_color_vec = vec![red_num, blue_num, green_num];
+            let mut total = 0; // sum of game values
+            let mut power_total = 0;
 
             // loop over each line and see if the game is valid
             for (idx, cur_vals) in game_values.iter().enumerate() {
+                println!("---------------------------------------------------------------------");
+                println!("cur game idx = {}", idx + 1);
+                println!("cmp_color_vals = {:?}", cmp_color_vec);
+                println!("cur_vals = {:?}", cur_vals);
+                let mut valid = true;
 
-                let x = cmp_color_vec.iter().all(|item| cur_vals.le(*item));
+                for i in 0..cur_vals.len() {
+                    if cur_vals[i] > cmp_color_vec[i] {
+                        valid = false;
+                        break;
+                    }
+                }
 
+                let mut tmp_pwr = 0;
+                for val in cur_vals {
+                    if tmp_pwr == 0 {
+                        tmp_pwr = *val;
+                    } else {
+                        tmp_pwr *= val;
+                    }
+                }
+                println!("prev total pwr = {}", power_total);
+                println!("tmp_pwr = {}", tmp_pwr);
+                power_total += tmp_pwr;
+                println!("post totla pwr = {}", power_total);
+
+                println!("prev total = {}", total);
+                if valid {
+                    total = total + idx + 1;
+                }
+                println!("post total = {}", total);
             }
-
         }
+
+        3 => {
+
+        },
 
         // ----------------------------------------------------------------------------------------
         // Default edge case
