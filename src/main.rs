@@ -122,8 +122,21 @@ fn main() {
         }
 
         3 => {
+            // get first line for testing
+            let file_lines = contents.split("\n").collect::<Vec<&str>>();
 
-        },
+            // create a matrix of each of these lines and turn them into character arrays
+            let mut char_mat: Vec<Vec<char>> = Vec::new();
+
+            for line in file_lines {
+                if line != "" {
+                    char_mat.push(line.chars().collect());
+                }
+            }
+
+            println!("num lines = {}", char_mat.len());
+            println!("{:?}", char_mat);
+        }
 
         // ----------------------------------------------------------------------------------------
         // Default edge case
